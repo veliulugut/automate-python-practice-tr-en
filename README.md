@@ -23,6 +23,7 @@
   - [Metin ve Sayı Denkliği](#metin-ve-sayı-denkliği)
   - [Alıştırma Soruları](#alıştırma-soruları)
 - [Akış Kontrolü](#akış-kontrolü)
+   - [Karşılaştırma Operatörleri](#karşılaştırma-operatörleri)
  
 
 
@@ -398,4 +399,40 @@ Bu yapıları daha iyi anlayabilmek için yazılımcılar genellikle `akış diy
  - `Koşul / Karar noktaları:` Baklava dilimi (genellikle "Evet / Hayır" şeklinde iki yönlü dallanır)
 
 ![Akış Diyagramı Örneği](/images/excalidraw_picture_1.png)
+
+
+#### Karşılaştırma Operatörleri
+Karşılaştırma operatörleri (diğer adıyla ilişkisel operatörler), iki değeri karşılaştırmak için kullanılır ve sonuç olarak Boolean (mantıksal) bir değer üretir: `True` veya `False`.
+
+Python'daki temel karşılaştırma operatörleri şunlardır:
+
+| Operatör | Anlamı | Örnek |
+| -------- | ------- | ------ |
+| `==` | Eşit mi? | `5 == 5` |
+| `!=` | Eşit değil mi? | `5 != 3` |
+| `>` | Büyüktür | `5 > 3` |
+| `<` | Küçüktür | `5 < 3` |
+| `>=` | Büyük eşit | `5 >= 5` |
+| `<=` | Küçük eşit | `5 <= 3` |
+
+> ✅ Eşitlik ve Eşitsizlik (`==` ve `!=`)
+
+```py
+42 == 42      # True
+42 == 99      # False
+2 != 3        # True
+```
+
+> 🔢 Sayısal Karşılaştırmalar (`<`, `>`, `<=`, `>=`)
+Bu dört operatör yalnızca sayısal değerler (tam sayılar veya ondalıklar) üzerinde doğru çalışır. Aşağıdaki örneklerde olduğu gibi karşılaştırma yapılır:
+```py
+10 > 5        # True
+3.5 <= 4.0    # True
+7 >= 7        # True
+1 < 0         # False
+```
+
+#### ⚠️ Uyumlu Türlerle Çalışın
+- Sayılar sayılarla, dizgiler dizgilerle karşılaştırılmalıdır.
+- Karşılaştırma yaparken veri türlerinin uyumlu olması önemlidir. Aksi takdirde beklenmeyen `False` sonuçları ya da hata mesajları alabilirsiniz.
 
