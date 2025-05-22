@@ -11,18 +11,18 @@
 
 ### İçindekiler
 
-- [Giriş](#giris%E2%80%93)
-- [Python ile Programlamanın Temelleri](#python-ile-programlamanin-temelleri)
-  - [Operatörler](#python-ile-operat%C3%B6rler)
+- [Giriş](#giriş)
+- [Python ile Programlamanın Temelleri](#python-ile-programlamanın-temelleri)
+  - [Python ile Operatörler](#python-ile-operatörler)
   - [Veri Tipleri](#veri-tipleri)
-  - [Değişkenler](#de%C4%9Fi%C5%9Fkenler)
+  - [Değişkenler](#değişkenler)
   - [print() Fonksiyonu](#print-fonksiyonu)
   - [input() Fonksiyonu](#input-fonksiyonu)
   - [len() Fonksiyonu](#len-fonksiyonu)
-  - [str(), int(), float() Fonksiyonları](#str-int-float-fonksiyonlari)
-  - [Metin ve Sayı Denkliği](#metin-ve-sayi-denkligi)
-  - [Alıştırma Soruları](#al%C4%B1stirma-sorular%C4%B1)
-- [Akış Kontorolü](#ak%C4%B1%C5%9F-kontrol%C3%BC)
+  - [str(), int(), float() Fonksiyonları](#str-int-float-fonksiyonları)
+  - [Metin ve Sayı Denkliği](#metin-ve-sayı-denkliği)
+  - [Alıştırma Soruları](#alıştırma-soruları)
+- [Akış Kontrolü](#akış-kontrolü)
  
 
 
@@ -377,3 +377,25 @@ milkShake = milkShake * 2
 ```
 
 4. 100 geçersiz bir değişken ismi iken name neden geçerli bir değişken ismidir?
+
+### Akış Kontrolü
+Artık Python’daki temel komutları öğrendiniz ve bir programın, baştan sona bir dizi talimatı çalıştırmasıyla nasıl işlediğini biliyorsunuz. Ancak gerçek dünyadaki yazılımlar bu kadar basit değildir. Gerçek gücünü, kararlar alabilme ve tekrar eden görevleri gerçekleştirme yeteneğinden alır.
+
+Programlar çoğu zaman sırayla değil, belli koşullara göre bazı adımları atlar, bazı adımları tekrarlar ya da alternatif yollar izler. İşte bu tür davranışlara olanak tanıyan yapılar, Python'da akış kontrol deyimleri olarak adlandırılır.
+
+
+#### 🧭 Neden Akış Kontrolü?
+Düşünün ki bir program, hafta sonu yapılacaklar listenizi sadece baştan sona okuyarak işleseydi. Havanın yağmurlu olup olmadığına, dışarı çıkıp çıkmayacağınıza hiç bakmadan tüm işleri sırayla yapmaya çalışırdı. Gerçek hayatta nasıl kararlar alıyorsak, programlarımızın da şartlara göre farklı yollar izlemesi gerekir.
+
+
+#### Akış Diyagramları
+Bu yapıları daha iyi anlayabilmek için yazılımcılar genellikle `akış diyagramları (flowchart)` kullanır. Bu diyagramlar, bir programın hangi adımları hangi koşullarda takip ettiğini görselleştirir.
+
+
+>🔷 Akış diyagramlarındaki temel semboller:
+ - `Başlangıç / Bitiş adımları:` Yuvarlatılmış dikdörtgenler
+ - `İşlem adımları:` Düz dikdörtgenler
+ - `Koşul / Karar noktaları:` Baklava dilimi (genellikle "Evet / Hayır" şeklinde iki yönlü dallanır)
+
+![Akış Diyagramı Örneği](/images/excalidraw_picture_1.png)
+
