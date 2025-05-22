@@ -16,7 +16,14 @@
   - [Operatörler](#python-ile-operat%C3%B6rler)
   - [Veri Tipleri](#veri-tipleri)
   - [Değişkenler](#de%C4%9Fi%C5%9Fkenler)
-
+  - [print() Fonksiyonu](#print-fonksiyonu)
+  - [input() Fonksiyonu](#input-fonksiyonu)
+  - [len() Fonksiyonu](#len-fonksiyonu)
+  - [str(), int(), float() Fonksiyonları](#str-int-float-fonksiyonlari)
+  - [Metin ve Sayı Denkliği](#metin-ve-sayi-denkligi)
+  - [Alıştırma Soruları](#al%C4%B1stirma-sorular%C4%B1)
+- [Akış Kontorolü](#ak%C4%B1%C5%9F-kontrol%C3%BC)
+ 
 
 
 ## Giriş
@@ -243,4 +250,130 @@ user name = "Ali" # Boşluk içeriyor (Geçersiz)
 class = "Math"    # Python'da özel bir anahtar kelime (Geçersiz)
 ```
 
-### İlk Programımız
+### print() Fonksiyonu
+Python'da bir metni(dizgi/string) ya da değeri ekrana yazdırmak için `print()`fonksiyonunu kullanırız. Bu fonksiyonun temel görevi, kullanıcıya bilgi vermek veya çıktıyı görselleştirmektir.
+
+```py
+print("Hayat çok kisa değil mi ? ")
+
+# Output: Hayat çok kisa değil mi ?
+```
+> ### Boş Satır Yazdırmak
+
+Eğer `print()`fonksiyonunu `hiçbir argüman vermeden`çağırırsanız, sadece bir boş satır yazdırır.
+```py
+print("Satır 1")
+print()
+print("Satır 3")
+
+# Output:
+# Satır 1
+
+# Satır 3
+```
+
+> 🎯 Not
+>  - `print()` sadece dizgileri değil, sayıları ve değişkenleri de yazdırabilir.
+> - İster çift tırnak `(")` ister tek tırnak `(')` kullanabilirsiniz. İkisi de aynı sonucu verir.
+
+
+### input() Fonksiyonu
+Python'da kullanıcıdan veri almak istiyorsak ìnput() fonksiyonu tam olarak ihtiyacımız olan şeydir. Bu fonksiyon çalıştırıldığında program durur ve kullanıcının klavyesinden bir metin girip Ènter`tuşuna basmasını bekler.
+
+```py
+userName = input("Adınızı girin: ")
+
+# Output: Adınızı girin: Levi
+
+print("Merhaba, " + userName)
+
+# Output: Merhaba, Levi
+```
+
+> ⚠️ Not
+> - ìnput()`fonksiyonu her zaman girdiyi bir dizgi (string) olarak alır.
+> - Sayısal bir veri bekliyorsanız, girişi `int` ya da `float()` gibi dönüştürücülerle işleyebilirsiniz. (Bu konuyu ilerleyen bölümlerde göreceğiz.)
+
+### len() Fonksiyonu
+Python'da bir dizginin (string'in) uzunluğunu öğrenmek istiyorsanız, `len()`fonksiyonunu kullanabilirsiniz. Bu fonksiyon bir dizgi değeri ya da dizgi içeren bir değişken gönderildiğinde, dizginin `karakter sayısını`tam sayı (integer) olarak verir.
+
+```py
+mesaj = 'Her karanlık gecenin bir sabahı vardır.'
+
+print(mesaj)
+print(len(mesaj))
+
+# Output:
+# Her karanlık gecenin bir sabahı vardır.
+# 42
+```
+
+### str(), int(), float() Fonksiyonları
+Python'da farklı veri türleri arasında dönüşüm yapmak oldukça yaygındır. Özellikle kullanıcıdan alınan girişler `input()` her zaman dizgi (string) tipindedir. Bu yüzden bazen dizgileri sayıya ya da sayıları dizgiye çevirmek gerekir. İşte bu dönüşümleri yaparken `str()`, `int()` ve `float()` fonksiyonları kullanılır.
+
+> #### str() Fonksiyonu - Sayıyı Dizgiye Çevirme
+```py
+print("Ben " + str(24) + " yaşındayım.")
+# Ekran çıktısı: Ben 24 yaşındayım.
+```
+
+> #### int() Fonksiyonu - Dizgiyi Tam Sayıya Çevirme
+```py
+yas = input("Yaşını gir: ")
+print(int(yas) + 1)  # Kullanıcının yaşını 1 artırır
+# Ekran çıktısı: 25
+```
+
+> #### float() Fonksiyonu - Dizgiyi Ondalık Sayıya Çevirme
+```py
+sayisalDeger = "99.99"
+print(float(sayisalDeger) + 0.01)  # 100.0 çıktısını verir
+# Ekran çıktısı: 100.0
+```
+
+#### Özet
+| Fonksiyon | Görevi | Örnek | Sonuç |
+| -------- | ------- | ------ | ----- |
+| str() | Sayıyı dizgiye çevirir | str(24) | '24' |
+| int() | Dizgiyi tam sayıya çevirir | int('24') | 24 |
+| float() | Dizgiyi ondalık sayıya çevirir | float('24.5') | 24.5 |
+
+### Metin ve Sayı Denkliği
+Python’da veri türleri çok önemlidir. Aynı görünüme sahip olsalar bile, farklı türdeki veriler Python tarafından farklı değerler olarak değerlendirilir. Bu durum, özellikle karşılaştırma `(==)` işlemlerinde belirgin şekilde ortaya çıkar.
+
+| Karşılaştırma | Açıklama | Sonuç |
+| -------- | ------- | ------ |
+| `20 == '20'` | Sayı ile dizgi karşılaştırılamaz | `False` |
+| `20 == 20.0 ` | Tam sayı ile kayan nokta aynı değeri taşıyor | `True` |
+| `'20' == '20.0'` | Dizgiler aynı değil | `False` |
+| `20.0 == 00.20.000`| Python, baştaki sıfırları dikkate almaz | `True` |
+
+
+### Alıştırma Soruları
+
+1. Aşağıdakilerden hangileri operatör, hangileri değerlerdir ?
+
+```py
+*
+'levi'
+- 
+/
++
+233
+````
+
+2. Aşağıdakilerden hangisi bir değişken, hangisi bir dizgidir(string) ?
+
+```py
+milkShake
+'milkShake'
+```
+3. aşağıdaki kod çalıştıktan sonra `milkShake` değişkeninin değeri ne olur ?
+
+```py
+milkShake = 25
+milkShake = milkShake + 5
+milkShake = milkShake * 2
+```
+
+4. 100 geçersiz bir değişken ismi iken name neden geçerli bir değişken ismidir?
