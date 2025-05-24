@@ -2,6 +2,9 @@
 [![linkedin](https://img.shields.io/badge/LinkedIn-python--docs--tr-0A66C2?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/veliulugut/) 
 [![gmail](https://img.shields.io/badge/GMail-python--docs--tr-EA4335?style=for-the-badge&logo=Gmail)](mailto:veliulugut1@gmail.com)
 
+[![gif](https://media.giphy.com/media/dz7odtsoSkj15FAhIV/giphy.gif?cid=ecf05e47y6te0txxrp2zlaumh1u40z4sisn06mbold2x0s77&ep=v1_gifs_related&rid=giphy.gif&ct=g)](
+https://media.giphy.com/media/dz7odtsoSkj15FAhIV/giphy.gif?cid=ecf05e47y6te0txxrp2zlaumh1u40z4sisn06mbold2x0s77&ep=v1_gifs_related&rid=giphy.gif&ct=g)
+
 > **Yazar Notu:**
 >
 > Bu döküman 19.05.2025 tarihinde [Python İle Sıkıcı İşleri Anında Bitir](https://www.buzdagikitabevi.com/python-ile-sikici-isleri-aninda-bitir-yeni-baslayanlar-icin-uygulamali-programlama)  ve  [YazBel](https://python-istihza.yazbel.com/index.html) kaynaklarından esinlenerek oluşturulmuştur.
@@ -24,6 +27,7 @@
   - [Alıştırma Soruları](#alıştırma-soruları)
 - [Akış Kontrolü](#akış-kontrolü)
    - [Karşılaştırma Operatörleri](#karşılaştırma-operatörleri)
+   - [Boole Operatörleri](#boole-operatörleri)
  
 
 
@@ -435,4 +439,28 @@ Bu dört operatör yalnızca sayısal değerler (tam sayılar veya ondalıklar) 
 #### ⚠️ Uyumlu Türlerle Çalışın
 - Sayılar sayılarla, dizgiler dizgilerle karşılaştırılmalıdır.
 - Karşılaştırma yaparken veri türlerinin uyumlu olması önemlidir. Aksi takdirde beklenmeyen `False` sonuçları ya da hata mesajları alabilirsiniz.
+
+#### `==` VE  `=` Operatörleri Arasındaki Fark
+Python'da `=` ve `==` operatörleri birbirinden tamamen farklı amaçlara hizmet eder, ancak görünüş olarak benzedikleri için sıkça karıştırılırlar.
+
+- `=` operatörü bir atama operatörüdür. Sağ taraftaki değeri alır ve sol taraftaki değişkene atar.
+
+```py
+yaş = 24  # 24 değeri "yaş" değişkenine atanır
+```
+
+- `==` operatörü ise bir karşılaştırma operatörüdür. İki değerin birbirine eşit olup olmadığını kontrol eder ve sonuç olarak `True` ya da `False` döner.
+
+```py
+yaş == 24  # Eğer yaş gerçekten 24 ise, sonuç True olur
+```
+
+
+#### Boole Operatörleri
+Python'da `mantıksal ifadeleri` karşılaştırmak için üç temel boolean (mantıksal) operatör bulunur ve bunlar `and `, `or` ve `not` olarak adlandırılır. Bu operatörler, tıpkı karşılaştırma operatörleri gibi, bir ifadeyi değerlendirerek `True` ya da `False` sonucunu üretirler.
+
+> `and` Operatörü (VE)
+
+` and ` operatörü, iki boolean değeri birleştirir. Her iki değer de ` True ` olduğunda sonuç ` True ` olur. Eğer ifadelerden ` en az biri ` ` False ` ise sonuç ` False ` olur.
+> Bu yüzden ` and `, iki koşulun `aynı anda sağlanması gerektiği `durumlarda kullanılır.
 
