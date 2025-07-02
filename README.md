@@ -33,6 +33,11 @@
    - [İf Deyimleri](#if-deyimleri)
    - [else Deyimleri](#else-deyimleri)
     - [elif Deyimleri](#elif-deyimleri)
+    - [while Döngüsü Deyimi](#while-döngüsü-deyimi)
+    - [break Deyimleri](#break-deyimleri)
+    - [continue Deyimleri](#continue-deyimleri)
+    - [for Döngüleri ve range() Fonksiyonu](#for-döngüleri-ve-range-fonksiyonu)
+    - [Modülleri İçe Aktarma](#modülleri-içe-aktarma)
  
 
 
@@ -621,7 +626,7 @@ age = 10
 
 if name == 'Beyza':
     print('Merhaba, Beyza!')
-elif age < 12:
+elif age > 12:
     print('Sen Beyza değilsin ama gençsin!')
 ```
 
@@ -635,4 +640,224 @@ Bu kodda:
 
 > Not: `elif` zincirinde sadece `ilk True ` olan kod bloğu çalıştırılır. Diğerleri atlanır.
 
+
+### while Döngüsü Deyimi
+Python'da bir kod bloğunu belirli bir koşul sağlandığı sürece tekrar tekrar çalıştırmak istiyorsanız, `while` döngüsünü kullanabilirsiniz. `while` deyimi, koşul `True` olduğu sürece döngü içerisindeki kodları tekrarlar. Bu yapı, programlama dünyasında `döngü (loop)` olarak adlandırılır.
+
+`while` Döngüsünün Yapısı:
+- while anahtar kelimesi
+
+- True ya da False olarak değerlendirilebilecek bir `koşul`
+
+- Satır sonunda `:` (iki nokta üst üste)
+
+- Sonraki satırdan itibaren girintili yazılmış bir `kod bloğu`
+
+
+while ve if Arasındaki Fark:
+Yüzeyde `while döngüsü, if deyimine` benzer görünebilir çünkü ikisi de bir koşulu değerlendirir. Ancak aralarındaki temel fark `davranış şekillerindedir`:
+
+- `if` koşulu `bir kez` kontrol edilir. Koşul doğruysa yalnızca bir defa çalışır.
+
+- `while` koşulu ise `her döngü başında yeniden` kontrol edilir ve koşul doğru olduğu sürece kod bloğu tekrar tekrar çalışır.
+
+> Karşılaştırma Örnek:
+`if`ile:
+```py
+spam = 0
+
+if spam < 5:
+    print('Merhaba, dünya!')
+
+spam = spam + 1
+```
+
+`while` ile:
+```py
+spam = 0
+
+while spam < 5:
+    print('Merhaba, dünya!')
+    spam = spam + 1
+```
+
+Her iki örnek de `spam` değişkeninin 5'ten küçük olup olmadığını kontrol eder. Ancak;
+
+-  `if` yapısı yalnızca bir kez çalışır, ekrana sadece `bir defa` "Merhaba, dünya!" yazar.
+
+-  `while` döngüsü ise `spam` değişkeni 5 olana kadar `beş kez` çalışır ve "Merhaba, dünya!" çıktısını `beş defa üretir`.
+
+
+![Akış Diyagramı Örneği-While Döngüsü](/images/excalidraw_while.png)
+
+
+
+### break Deyimleri
+
+Bazen bir `while` döngüsünden belirli bir koşul gerçekleştiğinde erken çıkmak isteyebiliriz. Bu durumda `break` deyimi devreye girer. `break`, döngü bloğu içinde bulunduğu noktadan itibaren `döngüyü tamamen sonlandırır` ve program akışı döngü dışındaki kodlarla devam eder.
+
+`break` Deyiminin Yapısı:
+Sadece `break` anahtar kelimesinden oluşur.
+
+Genellikle bir `if` koşulu içinde kullanılır.
+
+Örnek:
+Aşağıdaki kod, kullanıcıdan isim girmesini isteyen ve `"isminizi"` kelimesi girildiğinde döngüyü sonlandıran bir programdır:
+
+```py
+while True:
+    print('Lütfen isminizi yazınız.')
+    name = input()
+    if name == 'isminizi':
+        break
+print('Teşekkürler!')
+```
+
+Bu örnekte:
+
+- Döngü sonsuz gibi görünse de, kullanıcı `"isminizi"` yazdığında `break` çalışır ve döngüden çıkılır.
+
+- Döngü dışındaki `"Teşekkürler!"` mesajı yazdırılır.
+
+
+![Akış Diyagramı Örneği-Break Deyimi](/images/excalidraw_break.png)
+
+
+### continue Deyimleri
+`continue` deyimi, döngü içinde bir koşul gerçekleştiğinde döngünün o anki yinelemesinin kalan kısmını atlamamızı sağlar. `continue` çalıştığında, döngü bloğunun kalan kısmı atlanır ve koşul yeniden değerlendirilerek döngü başa döner.
+
+`continue` Deyiminin Yapısı:
+- Sadece continue anahtar kelimesinden oluşur.
+
+- Genellikle if blokları içinde kullanılır.
+
+Örnek:
+Aşağıda kullanıcıdan isim ve şifre isteyen bir sistem yer almakta. Eğer kullanıcı `"geç"` yazarak geçmek isterse, döngü o turu atlar ve başa döner:
+
+```py
+while True:
+    print('Kullanıcı adınızı giriniz (çıkmak için "geç" yazınız):')
+    username = input()
+    if username == 'geç':
+        continue
+    print('Şifrenizi giriniz:')
+    password = input()
+    print(f'Hoşgeldiniz, {username}!')
+    break
+```
+Bu örnekte:
+- Kullanıcı `"geç"` yazarsa `continue` çalışır ve şifre sormadan tekrar kullanıcı adı istemeye geçilir.
+
+Kullanıcı geçerli bir isim yazdığında sistem şifre sorar ve ardından döngüden çıkar.
+
+brek vs continue Karşılaştırması:
+
+| Deyim | Ne Yapar ? |
+| -------- | ------- |
+| break | Döngüyü tamamen sonlandırır ve dışındaki koda geçer.
+| continue |Döngü bloğunun kalan kısmını atlar, bir sonraki adıma geçer. |
+
+### for Döngüleri ve range() Fonksiyonu
+`while` döngüsü bir koşul `True` olduğu sürece çalışmaya devam eder. Ancak bazı durumlarda bir kod bloğunu belirli bir sayıda çalıştırmak isteriz. İşte bu tür durumlar için Python'da `for` döngüsü ve `range()` fonksiyonu kullanılır.
+
+`for` Döngüsünün Yapısı
+`for döngüsü`, `range()` fonksiyonuyla birlikte genellikle aşağıdaki yapıda kullanılır:
+
+```py
+for i in range(5):
+    # Döngü bloğu
+```
+
+Bu yapı aşağıdaki öğeleri içerir:
+
+- for anahtar kelimesi
+
+- Döngüde kullanılacak bir sayaç değişkeni (örneğin i)
+
+- in anahtar kelimesi
+
+- range() fonksiyon çağrısı
+
+- Satır sonunda : işareti
+
+- Bir sonraki satırdan başlayan, girintili bir kod bloğu (döngü gövdesi)
+
+
+⚠️ Not: break ve continue yalnızca for ve while döngüleri içinde kullanılabilir. Bu deyimler döngü dışında kullanılırsa Python hata verir.
+
+## Uygulamalı Örnek: Gauss’un Hikayesi
+Matematikçi Carl Friedrich Gauss çocukken sınıfta öğretmeni tarafından "0’dan 100’e kadar olan sayıları toplayın" göreviyle karşılaşır. Gauss kısa sürede bu toplamı hesaplamanın pratik bir yolunu bulur. Şimdi bu işlemi Python'da bir `for` döngüsü ile yapalım:
+
+```py
+total = 0
+for num in range(101):
+    total = total + num
+print(total)
+# Output: 5050
+```
+Bu kodda:
+- `range(101)` ifadesi, 0’dan 100’e kadar olan tüm sayıları üretir (100 dahil).
+
+- Her bir `num` değeri `total` değişkenine eklenir.
+
+- Sonuçta 0 + 1 + 2 + ... + 100 toplamı hesaplanır.
+
+- Ekrana `5050` yazdırılır.
+
+
+### Modülleri İçe Aktarma
+Python dilinde daha önce kullandığımız `print()`, `input()` ve `len()` gibi fonksiyonlar, `yerleşik (built-in)` fonksiyonlar olarak adlandırılır. Bu fonksiyonlar, Python tarafından varsayılan olarak sağlanır ve doğrudan kullanılabilir.
+
+Bununla birlikte Python, sadece yerleşik fonksiyonlarla sınırlı değildir. Aynı zamanda `standart kütüphane (standard library)` adı verilen, çeşitli görevleri yerine getirmeye yönelik birçok hazır `modülle` birlikte gelir.
+
+Her bir modül, programınıza dahil edilebilecek ve farklı görevler üstlenen fonksiyonlar içeren bir Python dosyasıdır.
+
+## `import`Deyimi
+Bir modülü içe aktarmak için şu yapıyı kullanırız:
+
+```py
+import modul_adi
+```
+
+İsteğe bağlı olarak, birden fazla modül virgül ile ayrılarak aynı anda da içe aktarılabilir:
+
+```py
+import modul1, modul2
+```
+
+Modül içindeki fonksiyonlara erişim şu şekilde sağlanır:
+```py
+
+modul_adi.fonksiyon_adi()
+```
+
+Örnek : `random`Modülü Kullanımı
+```py
+import random
+
+for i in range(5):
+    print(random.randint(1, 10))
+# Output: 5 rastgele sayı (1-10 arası)
+```
+
+Bu örnekte:
+
+- random.randint(1, 10) fonksiyonu, 1 ile 10 (her iki sınır dahil) arasında rastgele bir tam sayı üretir.
+
+- Döngü bu işlemi 5 kez tekrar eder.
+
+## `from ... import` Deyimi
+
+```py
+from random import *
+```
+
+Bu ifade, `random` modülündeki tüm fonksiyonları içe aktarır. Böylece fonksiyonları çağırırken modül adını yazmanıza gerek kalmaz:
+
+```py
+for i in range(5):
+    print(randint(1, 10))
+```
+
+> ⚠️ Not: Ancak bu yöntem, hangi fonksiyonun nereden geldiğini anlamayı zorlaştırabilir. Özellikle büyük projelerde kodun okunabilirliği ve sürdürülebilirliği açısından şu kullanım önerilir:
 
