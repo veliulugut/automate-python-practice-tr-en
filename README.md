@@ -330,6 +330,7 @@ print("Merhaba, " + userName)
 > - ìnput()`fonksiyonu her zaman girdiyi bir dizgi (string) olarak alır.
 > - Sayısal bir veri bekliyorsanız, girişi `int` ya da `float()` gibi dönüştürücülerle işleyebilirsiniz. (Bu konuyu ilerleyen bölümlerde göreceğiz.)
 
+<a id="len-fonksiyonu"></a>
 ### 📏 len() Fonksiyonu
 Python'da bir dizginin (string'in) uzunluğunu öğrenmek istiyorsanız, `len()`fonksiyonunu kullanabilirsiniz. Bu fonksiyon bir dizgi değeri ya da dizgi içeren bir değişken gönderildiğinde, dizginin `karakter sayısını`tam sayı (integer) olarak verir.
 
@@ -344,6 +345,7 @@ print(len(mesaj))
 # 42
 ```
 
+<a id="str-int-float-fonksiyonlari"></a>
 ### 🔄 str(), int(), float() Fonksiyonları
 Python'da farklı veri türleri arasında dönüşüm yapmak oldukça yaygındır. Özellikle kullanıcıdan alınan girişler `input()` her zaman dizgi (string) tipindedir. Bu yüzden bazen dizgileri sayıya ya da sayıları dizgiye çevirmek gerekir. İşte bu dönüşümleri yaparken `str()`, `int()` ve `float()` fonksiyonları kullanılır.
 
@@ -374,6 +376,7 @@ print(float(sayisalDeger) + 0.01)  # 100.0 çıktısını verir
 | int() | Dizgiyi tam sayıya çevirir | int('24') | 24 |
 | float() | Dizgiyi ondalık sayıya çevirir | float('24.5') | 24.5 |
 
+<a id="metin-sayi-denkligi"></a>
 ### ⚖️ Metin ve Sayı Denkliği
 Python'da veri türleri çok önemlidir. Aynı görünüme sahip olsalar bile, farklı türdeki veriler Python tarafından farklı değerler olarak değerlendirilir. Bu durum, özellikle karşılaştırma `(==)` işlemlerinde belirgin şekilde ortaya çıkar.
 
@@ -385,6 +388,7 @@ Python'da veri türleri çok önemlidir. Aynı görünüme sahip olsalar bile, f
 | `20.0 == 00.20.000`| Python, baştaki sıfırları dikkate almaz | `True` |
 
 
+<a id="alistirma-sorulari"></a>
 ### 📝 Alıştırma Soruları
 
 1. Aşağıdakilerden hangileri operatör, hangileri değerlerdir ?
@@ -437,6 +441,7 @@ Bu yapıları daha iyi anlayabilmek için yazılımcılar genellikle `akış diy
 ![Akış Diyagramı Örneği](/images/excalidraw_picture_1.png)
 
 
+<a id="karsilastirma-operatorleri"></a>
 #### 🔍 Karşılaştırma Operatörleri
 Karşılaştırma operatörleri (diğer adıyla ilişkisel operatörler), iki değeri karşılaştırmak için kullanılır ve sonuç olarak Boolean (mantıksal) bir değer üretir: `True` veya `False`.
 
@@ -487,6 +492,7 @@ yaş = 24  # 24 değeri "yaş" değişkenine atanır
 yaş == 24  # Eğer yaş gerçekten 24 ise, sonuç True olur
 ```
 
+<a id="boole-operatorleri"></a>
 #### 🧠 Boole Operatörleri
 Python'da `mantıksal ifadeleri` karşılaştırmak için üç temel boolean (mantıksal) operatör bulunur ve bunlar `and `, `or` ve `not` olarak adlandırılır. Bu operatörler, tıpkı karşılaştırma operatörleri gibi, bir ifadeyi değerlendirerek `True` ya da `False` sonucunu üretirler.
 
@@ -520,6 +526,7 @@ Python'da `mantıksal ifadeleri` karşılaştırmak için üç temel boolean (ma
 ` not ` operatörü, diğerlerinden farklı olarak tek bir boolean değeri alır. Bu nedenle tekli (unary) bir operatör olarak kabul edilir. Verilen boolean değerin tam tersini üretir: ` True ` ise ` False `, ` False ` ise ` True ` olur.
 
 
+<a id="akis-kontrolu-elemanlari"></a>
 ### 🔧 Akış Kontrolünün Elemanları
 Python'da programın kontrol akışını yönetmek için çeşitli deyimler (örneğin ` if `,` while `,` for `) kullanılır. Bu deyimler genellikle bir koşul ile başlar ve ardından bir ` kod bloğu (clause) ` gelir. Bu yapılar sayesinde programlar, belirli durumlara göre farklı yollar izleyebilir. Ancak bu deyimlere geçmeden önce, koşul ve kod bloğu kavramlarını iyi anlamamız gerekir.
 
@@ -595,6 +602,7 @@ if name == "Beyza":
 ![Akış Diyagramı Örneği-If Deyimi](/images/excalidraw_if.png)
 
 
+<a id="else-deyimleri"></a>
 ### ↩️ else Deyimleri
 Bir `if`deyimini, isteğe bağlı olarak bir `else` deyimi takip edebilir. `else`bloğu, yalnızca `if`koşulu `False` olduğunda çalıştırılır. Açık bir ifadeyle bu yapı:
 
@@ -626,6 +634,7 @@ Bu örnekte:
 ![Akış Diyagramı Örneği-Else Deyimi](/images/excalidraw_else.png)
 
 
+<a id="elif-deyimleri"></a>
 ### 🔀 elif Deyimleri
 `if` ve `else` yapıları çoğu durumda yeterli olsa da, birden fazla olasılığı kontrol etmek gerekebilir. İşte bu noktada `elif` `(else if)` devreye girer.
 
@@ -710,6 +719,7 @@ Her iki örnek de `spam` değişkeninin 5'ten küçük olup olmadığını kontr
 
 ![Akış Diyagramı Örneği-While Döngüsü](/images/excalidraw_while.png)
 
+<a id="break-deyimleri"></a>
 ### 🛑 break Deyimleri
 
 Bazen bir `while` döngüsünden belirli bir koşul gerçekleştiğinde erken çıkmak isteyebiliriz. Bu durumda `break` deyimi devreye girer. `break`, döngü bloğu içinde bulunduğu noktadan itibaren `döngüyü tamamen sonlandırır` ve program akışı döngü dışındaki kodlarla devam eder.
@@ -739,6 +749,7 @@ Bu örnekte:
 
 ![Akış Diyagramı Örneği-Break Deyimi](/images/excalidraw_break.png)
 
+<a id="continue-deyimleri"></a>
 ### ⏭️ continue Deyimleri
 `continue` deyimi, döngü içinde bir koşul gerçekleştiğinde döngünün o anki yinelemesinin kalan kısmını atlamamızı sağlar. `continue` çalıştığında, döngü bloğunun kalan kısmı atlanır ve koşul yeniden değerlendirilerek döngü başa döner.
 
@@ -921,7 +932,8 @@ for i in range(5):
     - [🔁 for Loops and range() Function](#for-loops-and-range-function-en)
     - [📦 Importing Modules](#importing-modules-en)
 
-## 🚀 Introduction {#introduction-en}
+<a id="introduction-en"></a>
+## 🚀 Introduction
 
 Python is a programming language just like C, C++, Perl, or Golang. It allows us to tell the computer what to do; in other words, it's a way to control the computer.
 
@@ -929,9 +941,11 @@ This language was created in the early 1990s by Dutch developer Guido van Rossum
 
 One of Python's most prominent features is that the learning process is easier compared to other languages. Therefore, it's quite suitable for beginners in programming. Even if you have no previous coding experience, starting with Python can be a very good choice.
 
-## 🎯 Python Programming Fundamentals {#python-programming-fundamentals-en}
+<a id="python-programming-fundamentals-en"></a>
+## 🎯 Python Programming Fundamentals
 
-### ➕ Python Operators {#python-operators-en}
+<a id="python-operators-en"></a>
+### ➕ Python Operators
 
 In the Python programming language, there are operators used to perform mathematical operations. These operators allow us to perform operations such as addition, subtraction, multiplication, and division on numbers.
 
@@ -958,7 +972,8 @@ The order of operations for Python math operators is similar to mathematics. Fir
 `>>> 5 + File "<stdin>", line 1
 SyntaxError: invalid syntax`
 
-### 📊 Data Types {#data-types-en}
+<a id="data-types-en"></a>
+### 📊 Data Types
 
 In Python, expressions allow multiple components (such as numbers and operators) to come together to produce a single value. The result of each expression is a value.
 
@@ -1055,7 +1070,8 @@ TypeError: can't multiply sequence by non-int of type 'float'
 
 > ⚠️ If you want to multiply strings with the `*` operator, the second operand must be an integer `(int)`. It cannot be used with `str` or `float` types.
 
-### 🏷️ Variables {#variables-en}
+<a id="variables-en"></a>
+### 🏷️ Variables
 
 A variable is like a name tag that can temporarily store a value in the computer's memory. If you want to use a value you obtained from an operation in your program later, you can save this value by assigning it to a variable.
 
@@ -1140,7 +1156,8 @@ user name = "Ali" # Contains space (Invalid)
 class = "Math"    # Special keyword in Python (Invalid)
 ```
 
-### 🖨️ print() Function {#print-function-en}
+<a id="print-function-en"></a>
+### 🖨️ print() Function
 In Python, we use the `print()` function to print text (string) or values to the screen. The main purpose of this function is to provide information to the user or visualize output.
 
 ```py
@@ -1166,7 +1183,8 @@ print("Line 3")
 >  - `print()` can print not only strings but also numbers and variables.
 > - You can use either double quotes `(")` or single quotes `(')`. Both give the same result.
 
-### ⌨️ input() Function {#input-function-en}
+<a id="input-function-en"></a>
+### ⌨️ input() Function
 If we want to get data from the user in Python, the `input()` function is exactly what we need. When this function is executed, the program stops and waits for the user to type text from the keyboard and press the `Enter` key.
 
 ```py
@@ -1183,7 +1201,8 @@ print("Hello, " + userName)
 > - The `input()` function always takes input as a string.
 > - If you're expecting numeric data, you can process the input with converters like `int()` or `float()`. (We'll see this topic in later sections.)
 
-### 📏 len() Function {#len-function-en}
+<a id="len-function-en"></a>
+### 📏 len() Function
 If you want to learn the length of a string in Python, you can use the `len()` function. When this function is given a string value or a variable containing a string, it returns the `number of characters` in the string as an integer.
 
 ```py
@@ -1197,7 +1216,8 @@ print(len(message))
 # 31
 ```
 
-### 🔄 str(), int(), float() Functions {#str-int-float-functions-en}
+<a id="str-int-float-functions-en"></a>
+### 🔄 str(), int(), float() Functions
 Converting between different data types in Python is quite common. Especially inputs received from users with `input()` are always of string type. Therefore, sometimes it's necessary to convert strings to numbers or numbers to strings. The `str()`, `int()`, and `float()` functions are used for these conversions.
 
 > #### str() Function - Converting Numbers to Strings
@@ -1227,7 +1247,8 @@ print(float(numericalValue) + 0.01)  # Outputs 100.0
 | int() | Converts strings to integers | int('24') | 24 |
 | float() | Converts strings to decimal numbers | float('24.5') | 24.5 |
 
-### ⚖️ Text and Number Equivalence {#text-and-number-equivalence-en}
+<a id="text-and-number-equivalence-en"></a>
+### ⚖️ Text and Number Equivalence
 Data types are very important in Python. Even if they have the same appearance, data of different types are considered different values by Python. This situation becomes particularly evident in comparison `(==)` operations.
 
 | Comparison | Description | Result |
@@ -1237,7 +1258,8 @@ Data types are very important in Python. Even if they have the same appearance, 
 | `'20' == '20.0'` | Strings are not the same | `False` |
 | `20.0 == 00.20.000`| Python ignores leading zeros | `True` |
 
-### 📝 Practice Questions {#practice-questions-en}
+<a id="practice-questions-en"></a>
+### 📝 Practice Questions
 
 1. Which of the following are operators and which are values?
 
@@ -1266,7 +1288,8 @@ milkShake = milkShake * 2
 
 4. Why is 100 an invalid variable name while name is a valid variable name?
 
-### 🎮 Flow Control {#flow-control-en}
+<a id="flow-control-en"></a>
+### 🎮 Flow Control
 Now you've learned the basic commands in Python and know how a program works by executing a series of instructions from start to finish. However, real-world software is not that simple. It gets its real power from the ability to make decisions and perform repetitive tasks.
 
 Programs often don't run in order, but skip some steps, repeat some steps, or follow alternative paths according to certain conditions. The structures that enable such behaviors are called flow control statements in Python.
@@ -1284,7 +1307,8 @@ To better understand these structures, software developers often use `flowcharts
 
 ![Flow Diagram Example](/images/excalidraw_picture_1.png)
 
-#### 🔍 Comparison Operators {#comparison-operators-en}
+<a id="comparison-operators-en"></a>
+#### 🔍 Comparison Operators
 Comparison operators (also called relational operators) are used to compare two values and produce a Boolean (logical) value as a result: `True` or `False`.
 
 The basic comparison operators in Python are:
@@ -1334,7 +1358,8 @@ age = 24  # The value 24 is assigned to the "age" variable
 age == 24  # If age is really 24, the result is True
 ```
 
-#### 🧠 Boolean Operators {#boolean-operators-en}
+<a id="boolean-operators-en"></a>
+#### 🧠 Boolean Operators
 In Python, there are three basic boolean (logical) operators for comparing `logical expressions`, and these are called `and`, `or`, and `not`. These operators, just like comparison operators, evaluate an expression and produce a `True` or `False` result.
 
 > `and` Operator (AND)
@@ -1369,7 +1394,8 @@ The `not` operator, unlike the others, takes only one boolean value. Therefore, 
 | True | False |
 | False | True |
 
-### 🔧 Elements of Flow Control {#elements-of-flow-control-en}
+<a id="elements-of-flow-control-en"></a>
+### 🔧 Elements of Flow Control
 Various statements (such as `if`, `while`, `for`) are used in Python to manage the control flow of the program. These statements usually start with a condition followed by a `code block (clause)`. Thanks to these structures, programs can follow different paths according to specific situations. However, before moving on to these statements, we need to understand the concepts of condition and code block well.
 
 #### Conditions
@@ -1407,7 +1433,8 @@ print("This line always runs")  # outside the if block
 # This line always runs
 ```
 
-### ❓ If Statements {#if-statements-en}
+<a id="if-statements-en"></a>
+### ❓ If Statements
 One of the most frequently used flow control structures in programming is the `if` statement. An `if` statement checks whether a specific condition is `true (True)`. If the condition is true, the `indented code block` that immediately follows this statement is executed. If the condition is `false (False)`, this block is skipped.
 
 Simply put, the `if` statement can be read as follows:
@@ -1438,7 +1465,8 @@ if name == "Beyza":
 
 ![Flow Diagram Example-If Statement](/images/excalidraw_if.png)
 
-### ↩️ else Statements {#else-statements-en}
+<a id="else-statements-en"></a>
+### ↩️ else Statements
 An `if` statement can optionally be followed by an `else` statement. The `else` block is executed only when the `if` condition is `False`. In clear terms, this structure:
 
 > "If this condition is true, run this code, otherwise run this code."
@@ -1468,7 +1496,8 @@ In this example:
 
 ![Flow Diagram Example-Else Statement](/images/excalidraw_else.png)
 
-### 🔀 elif Statements {#elif-statements-en}
+<a id="elif-statements-en"></a>
+### 🔀 elif Statements
 Although `if` and `else` structures are sufficient in most cases, it may be necessary to check multiple possibilities. This is where `elif` `(else if)` comes into play.
 
 The `elif` statement allows checking multiple conditions sequentially. It is executed `only if all` if and elif conditions before it are `False`.
@@ -1503,7 +1532,8 @@ In this code:
 
 > Note: In the `elif` chain, only the `first True` code block is executed. Others are skipped.
 
-### 🔄 while Loop Statement {#while-loop-statement-en}
+<a id="while-loop-statement-en"></a>
+### 🔄 while Loop Statement
 If you want to run a code block repeatedly as long as a certain condition is met in Python, you can use the `while` loop. The `while` statement repeats the code inside the loop as long as the condition is `True`. This structure is called a `loop` in the programming world.
 
 Structure of the `while` Loop:
@@ -1550,7 +1580,8 @@ Both examples check whether the `spam` variable is less than 5. However;
 
 ![Flow Diagram Example-While Loop](/images/excalidraw_while.png)
 
-### 🛑 break Statements {#break-statements-en}
+<a id="break-statements-en"></a>
+### 🛑 break Statements
 
 Sometimes we want to exit a `while` loop early when a certain condition is met. In this case, the `break` statement comes into play. `break` `completely terminates the loop` from the point where it is located in the loop block and the program flow continues with the code outside the loop.
 
@@ -1579,7 +1610,8 @@ In this example:
 
 ![Flow Diagram Example-Break Statement](/images/excalidraw_break.png)
 
-### ⏭️ continue Statements {#continue-statements-en}
+<a id="continue-statements-en"></a>
+### ⏭️ continue Statements
 The `continue` statement allows us to skip the remaining part of the current iteration of the loop when a condition is met within the loop. When `continue` runs, the remaining part of the loop block is skipped and the loop returns to the beginning by re-evaluating the condition.
 
 Structure of the `continue` Statement:
@@ -1613,7 +1645,8 @@ break vs continue Comparison:
 | break | Completely terminates the loop and moves to the code outside it.
 | continue | Skips the remaining part of the loop block, moves to the next step. |
 
-### 🔁 for Loops and range() Function {#for-loops-and-range-function-en}
+<a id="for-loops-and-range-function-en"></a>
+### 🔁 for Loops and range() Function
 A `while` loop continues to run as long as a condition is `True`. However, sometimes we want to run a code block a certain number of times. For such situations, the `for` loop and `range()` function are used in Python.
 
 Structure of the `for` Loop
@@ -1659,7 +1692,8 @@ In this code:
 
 - `5050` is printed to the screen.
 
-### 📦 Importing Modules {#importing-modules-en}
+<a id="importing-modules-en"></a>
+### 📦 Importing Modules
 Functions like `print()`, `input()` and `len()` that we used before in Python are called `built-in` functions. These functions are provided by Python by default and can be used directly.
 
 However, Python is not limited to just built-in functions. It also comes with many ready-made `modules` for various tasks, called the `standard library`.
