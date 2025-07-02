@@ -2,8 +2,9 @@
 [![linkedin](https://img.shields.io/badge/LinkedIn-python--docs--tr-0A66C2?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/veliulugut/) 
 [![gmail](https://img.shields.io/badge/GMail-python--docs--tr-EA4335?style=for-the-badge&logo=Gmail)](mailto:veliulugut1@gmail.com)
 
-[![gif](https://media.giphy.com/media/dz7odtsoSkj15FAhIV/giphy.gif?cid=ecf05e47y6te0txxrp2zlaumh1u40z4sisn06mbold2x0s77&ep=v1_gifs_related&rid=giphy.gif&ct=g)](
-https://media.giphy.com/media/dz7odtsoSkj15FAhIV/giphy.gif?cid=ecf05e47y6te0txxrp2zlaumh1u40z4sisn06mbold2x0s77&ep=v1_gifs_related&rid=giphy.gif&ct=g)
+
+![Profil](/images/profil.gif)
+
 
 > **Yazar Notu:**
 >
@@ -28,6 +29,10 @@ https://media.giphy.com/media/dz7odtsoSkj15FAhIV/giphy.gif?cid=ecf05e47y6te0txxr
 - [Akış Kontrolü](#akış-kontrolü)
    - [Karşılaştırma Operatörleri](#karşılaştırma-operatörleri)
    - [Boole Operatörleri](#boole-operatörleri)
+   - [Akış Kontrolünün Elemanları](#akış-kontrolünün-elemanları)
+   - [İf Deyimleri](#if-deyimleri)
+   - [else Deyimleri](#else-deyimleri)
+    - [elif Deyimleri](#elif-deyimleri)
  
 
 
@@ -463,4 +468,171 @@ Python'da `mantıksal ifadeleri` karşılaştırmak için üç temel boolean (ma
 
 ` and ` operatörü, iki boolean değeri birleştirir. Her iki değer de ` True ` olduğunda sonuç ` True ` olur. Eğer ifadelerden ` en az biri ` ` False ` ise sonuç ` False ` olur.
 > Bu yüzden ` and `, iki koşulun `aynı anda sağlanması gerektiği `durumlarda kullanılır.
+
+| A | B | A and B |
+| -------- | ------- | ------ |
+| True | True | True |
+| True | False | False |
+| False | True | False |
+| False | False | False |
+
+
+> `or ` Operatörü (VEYA)
+
+` or ` operatörü de iki boolean değer alır. Bu operatörde, en az bir ifade ` True ` ise sonuç ` True ` olur. Yani sadece her iki ifade de False olduğunda sonuç ` False ` döner. or, alternatifli koşullarda oldukça kullanışlıdır.
+
+| A | B | A or B |
+| -------- | ------- | ------ |
+| True | True | True |
+| True | False | True |
+| False | True | True |
+| False | False | False |
+
+
+> ❗ ` not ` Operatörü (DEĞİL)
+
+` not ` operatörü, diğerlerinden farklı olarak tek bir boolean değeri alır. Bu nedenle tekli (unary) bir operatör olarak kabul edilir. Verilen boolean değerin tam tersini üretir: ` True ` ise ` False `, ` False ` ise ` True ` olur.
+
+
+### Akış Kontrolünün Elemanları
+Python'da programın kontrol akışını yönetmek için çeşitli deyimler (örneğin ` if `,` while `,` for `) kullanılır. Bu deyimler genellikle bir koşul ile başlar ve ardından bir ` kod bloğu (clause) ` gelir. Bu yapılar sayesinde programlar, belirli durumlara göre farklı yollar izleyebilir. Ancak bu deyimlere geçmeden önce, koşul ve kod bloğu kavramlarını iyi anlamamız gerekir.
+
+
+#### Koşullar (Conditions)
+Daha önce öğrendiğimiz tüm boolean ifadeler (örneğin ` x > 5 `,` a == b `) aslında birer koşul olarak değerlendirilebilir. Akış kontrol deyimlerinde bu tür ifadeler, özel bir anlam kazanır ve doğrudan karar mekanizmasını belirler.
+
+Bir koşul her zaman ` True ` ya da ` False ` olarak değerlendirilir. Akış kontrol deyimi, bu değere göre programın hangi yolu izleyeceğine karar verir. Bu nedenle, neredeyse tüm akış kontrol yapıları en az bir koşula ihtiyaç duyar.
+
+
+#### Kod Blokları (Code Blocks)
+Python’da, birden fazla kod satırı bir araya gelerek bir blok oluşturabilir. Bu bloklar, bir koşulun sağlandığı durumlarda çalıştırılacak olan komutları temsil eder.
+
+Python’da blokların sınırları ` girintiler (indentation)` ile belirlenir. Diğer birçok programlama dilinde süslü parantez ` {} ` kullanılırken, Python’da kodun hizalanması oldukça kritiktir.
+
+> Kod blokları için üç temel kural vardır:
+
+1. Girinti arttığında yeni bir blok başlar.
+Bir deyimin altına girintili şekilde yazılan tüm satırlar, o deyime ait bir bloktur.
+
+2. Bloklar iç içe olabilir.
+Bir blok içerisinde başka bir akış kontrol deyimi kullanılabilir. Bu durumda ikinci blok, birincinin içinde yer alır ve daha fazla girinti ile yazılır.
+
+3. Girinti seviyesi azaltıldığında blok sona erer.
+Girintinin sıfırlanması ya da bir üst bloğun girinti seviyesine eşitlenmesi, mevcut bloğun sonlandığı anlamına gelir.
+
+```py
+x = 10
+
+if x > 5:
+    print("x büyüktür 5")  # bu satır if bloğuna aittir
+    if x > 8:
+        print("x aynı zamanda 8'den de büyüktür")  # iç içe bir blok
+print("Bu satır her zaman çalışır")  # if bloğu dışındadır
+# Output:
+# x büyüktür 5
+# x aynı zamanda 8'den de büyüktür
+```
+
+### İf Deyimleri
+Programlamada en sık kullanılan akış kontrol yapılarından biri `if` deyimidir . Bir `if `deyimi, belirli bir koşulun `doğru (True) `olup olmadığını kontrol eder. Eğer koşul doğruysa, bu deyimin hemen ardından gelen `girintili kod bloğu `çalıştırılır. Koşul `yanlış (False) `ise bu blok atlanır.
+
+Basitçe söylemek gerekirse, `if `deyimi şu şekilde okunabilir:
+
+> "Eğer bu koşul doğruysa, şu kodu çalıştır."
+
+Python'da `if `yapısı aşağıdaki bileşenlerden oluşur :
+ - `if` anahtar kelimesi
+ - Değerlendirilecek bir koşul (boolean ifade)
+ - Satırın sonunda iki nokta üst üste  ` : `
+ - Bir alt satırdan başlayarak girintili biçimde yazılmış kod bloğu
+
+ Örnek:
+ Diyelim ki, bir kullanıcının adının  ` "Beyza" ` olup olmadığını kontrol etmek istiyorsunuz. `" name "` adında bir değişkene daha önce bir değer atanmış olsun:
+
+```py
+name = "Beyza"
+
+if name == "Beyza":
+    print("Merhaba Beyza!")
+```
+
+- `if name == "Beyza": `satırı koşulu kontrol eder.
+- Bu satırın sonundaki  `: `işareti, bir kod bloğunun geleceğini belirtir.
+- Koşul doğruysa, girintili şekilde yazılmış olan `print("Merhaba Beyza!") `satırı çalıştırılır.
+
+> ❗❗ Python'da tüm akış kontrol yapılarında (if,elif,else,while,for...) iki nokta üst üste kullanılır ve bu yapıları girintili kod blokları takip eder. Girintileme Python'da sadece okunabilirlik değil, aynı zamanda sözdizilimsel bir zorunluluktur. 
+
+
+
+
+![Akış Diyagramı Örneği-If Deyimi](/images/excalidraw_if.png)
+
+
+### else Deyimleri
+Bir `if`deyimini, isteğe bağlı olarak bir `else` deyimi takip edebilir. `else`bloğu, yalnızca `if`koşulu `False` olduğunda çalıştırılır. Açık bir ifadeyle bu yapı:
+
+> "Eğer şu koşul doğruysa bu kodu çalıştır, aksi takdirde bu kodu çalıştır."
+
+şeklinde yorumlanabilir.
+
+`else`deyimi herhangi bir koşul içermez. Sadece `if` (veya `elif`) koşulları karşılanmadığında devreye girer.
+
+`else` Deyiminin Yapısı:
+- `else`anahtar kelimesi
+- Satır sonunda `:` işareti
+- Sonraki satırdan başlayarak girintili bir kod bloğu
+
+Örnek:
+```py
+name = 'Beyza'
+
+if name == 'Beyza':
+    print('Merhaba, Beyza!')
+else:
+    print('Merhaba, isminiz nedir?')
+```
+>
+
+Bu örnekte:
+- Eğer `name == 'Beyza'` doğruysa, ilk blok çalışır.
+- Aksi takdirde, `else`bloğu çalışır  ve alternatif mesaj verilir.
+
+![Akış Diyagramı Örneği-Else Deyimi](/images/excalidraw_else.png)
+
+
+### elif Deyimleri
+`if` ve `else` yapıları çoğu durumda yeterli olsa da, birden fazla olasılığı kontrol etmek gerekebilir. İşte bu noktada `elif` `(else if)` devreye girer.
+
+`elif` deyimi, birden çok koşulu sıralı şekilde kontrol etmeyi sağlar. `Yalnızca kendisinden önceki tüm` if ve elif koşulları `False` ise çalıştırılır.
+
+- `elif` Deyiminin Yapısı:
+elif anahtar kelimesi
+
+- Değerlendirilecek yeni bir koşul
+
+- Satır sonunda `:` işareti
+
+- Sonraki satırdan başlayarak girintili bir kod bloğu
+
+Örnek:
+```py
+name = 'Beyza'
+age = 10
+
+if name == 'Beyza':
+    print('Merhaba, Beyza!')
+elif age < 12:
+    print('Sen Beyza değilsin ama gençsin!')
+```
+
+Bu kodda:
+
+- İlk koşul `(name == 'Beyza')` doğruysa, sadece o blok çalışır.
+
+- Değilse, `elif age < 12` koşulu kontrol edilir.
+
+- Eğer her iki koşul da False ise hiçbir satır çalıştırılmaz.
+
+> Not: `elif` zincirinde sadece `ilk True ` olan kod bloğu çalıştırılır. Diğerleri atlanır.
+
 
