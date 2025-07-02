@@ -31,30 +31,31 @@
 
 ### 📋 İçindekiler
 
-- [🚀 Giriş](#giriş)
-- [🎯 Python ile Programlamanın Temelleri](#python-ile-programlamanın-temelleri)
-  - [➕ Python ile Operatörler](#python-ile-operatörler)
+- [🚀 Giriş](#giris)
+- [🎯 Python ile Programlamanın Temelleri](#python-temelleri)
+  - [➕ Python ile Operatörler](#operatorler)
   - [📊 Veri Tipleri](#veri-tipleri)
-  - [🏷️ Değişkenler](#değişkenler)
+  - [🏷️ Değişkenler](#degiskenler)
   - [🖨️ print() Fonksiyonu](#print-fonksiyonu)
   - [⌨️ input() Fonksiyonu](#input-fonksiyonu)
   - [📏 len() Fonksiyonu](#len-fonksiyonu)
-  - [🔄 str(), int(), float() Fonksiyonları](#str-int-float-fonksiyonları)
-  - [⚖️ Metin ve Sayı Denkliği](#metin-ve-sayı-denkliği)
-  - [📝 Alıştırma Soruları](#alıştırma-soruları)
-- [🎮 Akış Kontrolü](#akış-kontrolü)
-   - [🔍 Karşılaştırma Operatörleri](#karşılaştırma-operatörleri)
-   - [🧠 Boole Operatörleri](#boole-operatörleri)
-   - [🔧 Akış Kontrolünün Elemanları](#akış-kontrolünün-elemanları)
+  - [🔄 str(), int(), float() Fonksiyonları](#str-int-float-fonksiyonlari)
+  - [⚖️ Metin ve Sayı Denkliği](#metin-sayi-denkligi)
+  - [📝 Alıştırma Soruları](#alistirma-sorulari)
+- [🎮 Akış Kontrolü](#akis-kontrolu)
+   - [🔍 Karşılaştırma Operatörleri](#karsilastirma-operatorleri)
+   - [🧠 Boole Operatörleri](#boole-operatorleri)
+   - [🔧 Akış Kontrolünün Elemanları](#akis-kontrolu-elemanlari)
    - [❓ İf Deyimleri](#if-deyimleri)
    - [↩️ else Deyimleri](#else-deyimleri)
     - [🔀 elif Deyimleri](#elif-deyimleri)
-    - [🔄 while Döngüsü Deyimi](#while-döngüsü-deyimi)
+    - [🔄 while Döngüsü Deyimi](#while-dongusu)
     - [🛑 break Deyimleri](#break-deyimleri)
     - [⏭️ continue Deyimleri](#continue-deyimleri)
-    - [🔁 for Döngüleri ve range() Fonksiyonu](#for-döngüleri-ve-range-fonksiyonu)
-    - [📦 Modülleri İçe Aktarma](#modülleri-içe-aktarma)
+    - [🔁 for Döngüleri ve range() Fonksiyonu](#for-donguleri)
+    - [📦 Modülleri İçe Aktarma](#moduller)
 
+<a id="giris"></a>
 ## 🚀 Giriş
 
 Python, tıpkı C,C++,Perl ya da Golang gibi bir programlama dilir. Bilgisayara ne yapması gerektiğini söylememizi sağlar; yani bir anlamda bilgisayarı kontrol etmenin bir yoludur.
@@ -64,8 +65,10 @@ Bu Dil, 1990'lı yılların başında Hollandalı geliştirici Guido van Rossum 
 Python'un öne çıkan en önemli özelliklerinden biri, öğrenme sürecinin diğer dillere kıyasla daha kolay olmasıdır. Bu yüzden, programlamaya yeni başlayanlar için oldukça uygun bir dildir. Daha önce kodlama deneyiminiz olmasa bile, Python ile başlamak oldukça iyi bir tercih olabilir.
 
 
+<a id="python-temelleri"></a>
 ## 🎯 Python ile Programlamanın Temelleri
 
+<a id="operatorler"></a>
 ### ➕ Python ile Operatörler
 
 Python programlama dilinde, matematiksel işlemleri gerçekleştirmek için kullanılan operatörler bulunmaktadır. Bu operatörler, sayılar üzerinde toplama, çıkarma, çarpma ve bölme gibi işlemleri yapmamıza olanak tanır.
@@ -94,6 +97,7 @@ Python matematik operatörlerinin işlem sırası matematiktekilere benzerdir. �
 SyntaxError: invalid syntax`
 
 
+<a id="veri-tipleri"></a>
 ### 📊 Veri Tipleri
 
 Python'da ifadeler, birden fazla bileşenin (örneğin sayılar ve operatörler) bir araya gelerek tek bir değer üretmesini sağlar. Her ifadenin sonucu bir değerdir.
@@ -191,6 +195,7 @@ TypeError: can't multiply sequence by non-int of type 'float'
 
 > ⚠️ `*` operatörü ile dizgi çoğaltmak istiyorsanız, ikinci operand mutlaka tam sayı `(int)` olmalıdır. `str` veya `float` tipleri ile kullanılamaz.
 
+<a id="degiskenler"></a>
 ### 🏷️ Değişkenler
 
 Bir değişken (variable), bilgisayarın belleğinde bir değeri geçici olarak saklayabileceğiniz bir isim etiketi gibidir. Programınızda bir işlem sonucu elde ettiğiniz değeri daha sonra tekrar kullanmak istiyorsanız, bu değeri bir değişkene atayarak saklayabilirsiniz.
@@ -279,6 +284,7 @@ user name = "Ali" # Boşluk içeriyor (Geçersiz)
 class = "Math"    # Python'da özel bir anahtar kelime (Geçersiz)
 ```
 
+<a id="print-fonksiyonu"></a>
 ### 🖨️ print() Fonksiyonu
 Python'da bir metni(dizgi/string) ya da değeri ekrana yazdırmak için `print()`fonksiyonunu kullanırız. Bu fonksiyonun temel görevi, kullanıcıya bilgi vermek veya çıktıyı görselleştirmektir.
 
@@ -306,6 +312,7 @@ print("Satır 3")
 > - İster çift tırnak `(")` ister tek tırnak `(')` kullanabilirsiniz. İkisi de aynı sonucu verir.
 
 
+<a id="input-fonksiyonu"></a>
 ### ⌨️ input() Fonksiyonu
 Python'da kullanıcıdan veri almak istiyorsak ìnput() fonksiyonu tam olarak ihtiyacımız olan şeydir. Bu fonksiyon çalıştırıldığında program durur ve kullanıcının klavyesinden bir metin girip Ènter`tuşuna basmasını bekler.
 
@@ -407,6 +414,7 @@ milkShake = milkShake * 2
 
 4. 100 geçersiz bir değişken ismi iken name neden geçerli bir değişken ismidir?
 
+<a id="akis-kontrolu"></a>
 ### 🎮 Akış Kontrolü
 Artık Python'daki temel komutları öğrendiniz ve bir programın, baştan sona bir dizi talimatı çalıştırmasıyla nasıl işlediğini biliyorsunuz. Ancak gerçek dünyadaki yazılımlar bu kadar basit değildir. Gerçek gücünü, kararlar alabilme ve tekrar eden görevleri gerçekleştirme yeteneğinden alır.
 
@@ -551,6 +559,7 @@ print("Bu satır her zaman çalışır")  # if bloğu dışındadır
 # x aynı zamanda 8'den de büyüktür
 ```
 
+<a id="if-deyimleri"></a>
 ### ❓ İf Deyimleri
 Programlamada en sık kullanılan akış kontrol yapılarından biri `if` deyimidir . Bir `if `deyimi, belirli bir koşulun `doğru (True) `olup olmadığını kontrol eder. Eğer koşul doğruysa, bu deyimin hemen ardından gelen `girintili kod bloğu `çalıştırılır. Koşul `yanlış (False) `ise bu blok atlanır.
 
@@ -653,6 +662,7 @@ Bu kodda:
 > Not: `elif` zincirinde sadece `ilk True` olan kod bloğu çalıştırılır. Diğerleri atlanır.
 
 
+<a id="while-dongusu"></a>
 ### 🔄 while Döngüsü Deyimi
 Python'da bir kod bloğunu belirli bir koşul sağlandığı sürece tekrar tekrar çalıştırmak istiyorsanız, `while` döngüsünü kullanabilirsiniz. `while` deyimi, koşul `True` olduğu sürece döngü içerisindeki kodları tekrarlar. Bu yapı, programlama dünyasında `döngü (loop)` olarak adlandırılır.
 
@@ -763,6 +773,7 @@ break vs continue Karşılaştırması:
 | break | Döngüyü tamamen sonlandırır ve dışındaki koda geçer.
 | continue |Döngü bloğunun kalan kısmını atlar, bir sonraki adıma geçer. |
 
+<a id="for-donguleri"></a>
 ### 🔁 for Döngüleri ve range() Fonksiyonu
 `while` döngüsü bir koşul `True` olduğu sürece çalışmaya devam eder. Ancak bazı durumlarda bir kod bloğunu belirli bir sayıda çalıştırmak isteriz. İşte bu tür durumlar için Python'da `for` döngüsü ve `range()` fonksiyonu kullanılır.
 
@@ -809,6 +820,7 @@ Bu kodda:
 
 - Ekrana `5050` yazdırılır.
 
+<a id="moduller"></a>
 ### 📦 Modülleri İçe Aktarma
 Python dilinde daha önce kullandığımız `print()`, `input()` ve `len()` gibi fonksiyonlar, `yerleşik (built-in)` fonksiyonlar olarak adlandırılır. Bu fonksiyonlar, Python tarafından varsayılan olarak sağlanır ve doğrudan kullanılabilir.
 
